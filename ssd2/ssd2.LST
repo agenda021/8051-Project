@@ -1,0 +1,124 @@
+A51 MACRO ASSEMBLER  SSD2                                                                 07/05/2013 04:03:20 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.01
+OBJECT MODULE PLACED IN ssd2.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ssd2.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+  0030                 1     ds1 equ 30h
+  0031                 2     ds2 equ 31h
+  0032                 3     ds3 equ 32h
+  0033                 4     ds4 equ 33h
+                       5     
+  0034                 6     dc1 equ 34h
+  0035                 7     dc2 equ 35h
+  0036                 8     dc3 equ 36h
+                       9     
+  00A0                10     sl1 bit p2.0
+  00A1                11     sl2 bit p2.1
+  00A2                12     sl3 bit p2.2
+  00A3                13     sl4 bit p2.3
+                      14     
+0000                  15     org 0000h
+0000 758000           16     mov p0,#00h
+0003 7801             17     mov r0,#01h
+0005 7401             18     mov a,#01h 
+                      19     
+0007 753001           20     mov ds1,#01h
+000A 753102           21     mov ds2,#02h
+000D 753203           22     mov ds3,#03h
+0010 753304           23     mov ds4,#04h
+                      24     
+0013 08               25     incr:inc r0
+                      26     
+0014 1118             27     main: call display
+0016 80FB             28     jmp incr
+                      29     
+0018 C2A0             30     display: clr sl1
+001A D2A1             31     setb sl2
+001C D2A2             32     setb sl3
+001E D2A3             33     setb sl4
+                      34     
+0020 900039           35     mov dptr,#disp_lut
+0023 E530             36     mov a,ds1
+0025 93               37     movc a,@a+dptr
+                      38     
+                      39     
+                      40      
+0026 F580             41     mov p0,a
+                      42     
+0028 112C             43     call delay
+                      44     
+                      45     
+002A E8               46     mov a,r0
+002B 22               47     ret
+                      48     
+002C                  49     delay:
+                      50     ; mov dc3,#07d
+002C 7535F4           51     here:mov dc2,#500
+*** _______________________________________^
+*** WARNING #A52 IN 51 (ssd2.asm, LINE 51): VALUE HAS BEEN TRUNCATED TO 8 BITS
+002F 7534F4           52     again:mov dc1,#500
+*** ________________________________________^
+*** WARNING #A52 IN 52 (ssd2.asm, LINE 52): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0032 D534FD           53     djnz dc1,$
+0035 D535F7           54     djnz dc2,again
+A51 MACRO ASSEMBLER  SSD2                                                                 07/05/2013 04:03:20 PAGE     2
+
+                      55     ;djnz dc3,here
+0038 22               56        ret 
+0039                  57     disp_lut:
+0039 FC               58     db 0fch 
+003A 60               59     db 60h
+003B DA               60     db 0dah
+003C F2               61     db 0f2h
+003D 66               62     db 066h
+003E B6               63       db 0b6h
+003F BE               64     db 0beh
+0040 E0               65     db 0e0h
+0041 FE               66     db 0feh
+0042 F6               67     db 0f6h
+0043 EE               68     db 0eeh
+0044 3E               69     db 03eh
+0045 9C               70     db 9ch
+0046 7A               71     db 7ah
+0047 9E               72     db 9eh
+0048 8F               73     db 8fh
+                      74     
+                      75     end
+A51 MACRO ASSEMBLER  SSD2                                                                 07/05/2013 04:03:20 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   002FH   A   
+DC1. . . . . . . .  N NUMB   0034H   A   
+DC2. . . . . . . .  N NUMB   0035H   A   
+DC3. . . . . . . .  N NUMB   0036H   A   
+DELAY. . . . . . .  C ADDR   002CH   A   
+DISPLAY. . . . . .  C ADDR   0018H   A   
+DISP_LUT . . . . .  C ADDR   0039H   A   
+DS1. . . . . . . .  N NUMB   0030H   A   
+DS2. . . . . . . .  N NUMB   0031H   A   
+DS3. . . . . . . .  N NUMB   0032H   A   
+DS4. . . . . . . .  N NUMB   0033H   A   
+HERE . . . . . . .  C ADDR   002CH   A   
+INCR . . . . . . .  C ADDR   0013H   A   
+MAIN . . . . . . .  C ADDR   0014H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+SL1. . . . . . . .  B ADDR   00A0H.0 A   
+SL2. . . . . . . .  B ADDR   00A0H.1 A   
+SL3. . . . . . . .  B ADDR   00A0H.2 A   
+SL4. . . . . . . .  B ADDR   00A0H.3 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  2 WARNING(S), 0 ERROR(S)

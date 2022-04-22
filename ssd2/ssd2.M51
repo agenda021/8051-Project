@@ -1,0 +1,88 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/05/2013  04:03:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE ssd2.obj TO ssd2 RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  ssd2.obj (SSD2)
+
+
+LINK MAP OF MODULE:  ssd2 (SSD2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0049H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  ssd2 (SSD2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SSD2
+  C:002FH         SYMBOL        AGAIN
+  N:0034H         SYMBOL        DC1
+  N:0035H         SYMBOL        DC2
+  N:0036H         SYMBOL        DC3
+  C:002CH         SYMBOL        DELAY
+  C:0018H         SYMBOL        DISPLAY
+  C:0039H         SYMBOL        DISP_LUT
+  N:0030H         SYMBOL        DS1
+  N:0031H         SYMBOL        DS2
+  N:0032H         SYMBOL        DS3
+  N:0033H         SYMBOL        DS4
+  C:002CH         SYMBOL        HERE
+  C:0013H         SYMBOL        INCR
+  C:0014H         SYMBOL        MAIN
+  D:0080H         SYMBOL        P0
+  D:00A0H         SYMBOL        P2
+  B:00A0H.0       SYMBOL        SL1
+  B:00A0H.1       SYMBOL        SL2
+  B:00A0H.2       SYMBOL        SL3
+  B:00A0H.3       SYMBOL        SL4
+  C:0000H         LINE#         16
+  C:0003H         LINE#         17
+  C:0005H         LINE#         18
+  C:0007H         LINE#         20
+  C:000AH         LINE#         21
+  C:000DH         LINE#         22
+  C:0010H         LINE#         23
+  C:0013H         LINE#         25
+  C:0014H         LINE#         27
+  C:0016H         LINE#         28
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/05/2013  04:03:21  PAGE 2
+
+
+  C:0018H         LINE#         30
+  C:001AH         LINE#         31
+  C:001CH         LINE#         32
+  C:001EH         LINE#         33
+  C:0020H         LINE#         35
+  C:0023H         LINE#         36
+  C:0025H         LINE#         37
+  C:0026H         LINE#         41
+  C:0028H         LINE#         43
+  C:002AH         LINE#         46
+  C:002BH         LINE#         47
+  C:002CH         LINE#         51
+  C:002FH         LINE#         52
+  C:0032H         LINE#         53
+  C:0035H         LINE#         54
+  C:0038H         LINE#         56
+  -------         ENDMOD        SSD2
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0049H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=73
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

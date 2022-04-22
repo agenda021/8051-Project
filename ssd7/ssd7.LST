@@ -1,0 +1,174 @@
+A51 MACRO ASSEMBLER  SSD7                                                                 07/05/2013 04:46:16 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.01
+OBJECT MODULE PLACED IN ssd7.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ssd7.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+  0030                 1     ds1 equ 30h
+  0031                 2     ds2 equ 31h
+  0032                 3     ds3 equ 32h
+  0033                 4     ds4 equ 33h
+                       5     
+  0034                 6     dc1 equ 34h
+  0035                 7     dc2 equ 35h
+  0036                 8     dc3 equ 36h
+                       9     
+  00A0                10     sl1 bit p2.0
+  00A1                11     sl2 bit p2.1
+  00A2                12     sl3     bit p2.2
+  00A3                13     sl4 bit p2.3
+  0040                14     count equ 40h
+0000                  15     org 0000h
+0000 753000           16     mov ds1,#00h
+0003 753100           17     mov ds2,#00h
+0006 753209           18     mov ds3,#09h
+0009 753309           19     mov ds4,#09h
+                      20     
+000C 754001           21     main: mov count,#01h
+000F 1156             22     loop:call display
+0011 D540FB           23     djnz count ,loop
+0014 1125             24     call incr
+0016 B40AF6           25     cjne a,#09h+1,loop
+0019 1156             26     loop2: call display
+001B D540FB           27     djnz count ,loop2
+001E 113D             28     call incr1
+0020 B4FFF6           29     cjne a,#00h-1,loop2
+                      30     
+0023 80E7             31      jmp main
+0025 0530             32     incr:  inc ds1
+0027 E530             33     mov a , ds1
+0029 B40A29           34     cjne a,#09h+1,out
+002C 753000           35     mov ds1,#00h
+002F 0531             36       inc ds2
+0031 E531             37     mov a, ds2
+0033 B40A1F           38     cjne a,#09h+1,out
+0036 753000           39     mov ds1,#00h
+0039 753100           40     mov ds2,#00h
+003C 22               41     ret
+003D 1532             42     incr1:  dec ds3
+003F E532             43     mov a,ds3
+0041 B4FF11           44     cjne a,#00h-1,out
+0044 753209           45      mov ds3,#09h
+0047 1533             46      dec ds4
+0049 E533             47      mov a, ds4
+004B B4FF07           48     cjne a,#00h-1,out
+004E 753209           49     mov ds3,#09h
+0051 753309           50     mov ds4,#09h
+0054 22               51        ret
+0055 22               52     out: ret
+                      53     
+0056 C2A0             54     display: clr sl1
+0058 D2A1             55     setb sl2
+005A D2A2             56     setb sl3
+005C D2A3             57     setb sl4
+                      58     
+A51 MACRO ASSEMBLER  SSD7                                                                 07/05/2013 04:46:16 PAGE     2
+
+005E 9000AC           59     mov dptr,#disp_lut
+0061 E530             60     mov a,ds1
+0063 93               61     movc a,@a+dptr
+0064 F580             62     mov p0,a
+                      63     
+0066 119F             64     call delay
+                      65     
+0068 D2A0             66     setb sl1
+006A C2A1             67     clr sl2
+006C D2A2             68     setb sl3
+006E D2A3             69     setb sl4
+                      70     
+0070 9000AC           71     mov dptr,#disp_lut
+0073 E531             72     mov a,ds2
+0075 93               73     movc a,@a+dptr
+0076 F580             74     mov p0,a
+                      75     
+0078 119F             76     call delay
+                      77     
+007A D2A0             78     setb sl1
+007C D2A1             79     setb sl2
+007E C2A2             80     clr sl3
+0080 D2A3             81     setb sl4
+                      82     
+0082 9000AC           83     mov dptr,#disp_lut
+0085 E532             84     mov a,ds3
+0087 93               85     movc a,@a+dptr
+0088 F580             86     mov p0,a
+                      87     
+008A 119F             88     call delay
+                      89     
+008C D2A0             90     setb sl1
+008E D2A1             91     setb sl2
+0090 D2A2             92     setb sl3
+0092 C2A3             93     clr sl4
+                      94     
+0094 9000AC           95     mov dptr,#disp_lut
+0097 E533             96     mov a,ds4
+0099 93               97     movc a,@a+dptr
+009A F580             98     mov p0,a
+                      99     
+009C 119F            100     call delay
+                     101     
+009E 22              102     ret
+                     103     
+009F                 104     delay:
+                     105     ; mov dc3,#07d
+009F 753505          106     here:mov dc2,#05h
+00A2 753410          107     again:mov dc1,#10h
+00A5 D534FD          108     djnz dc1,$
+00A8 D535F7          109     djnz dc2,again
+                     110     ;djnz dc3,here
+00AB 22              111        ret 
+00AC                 112     disp_lut:
+00AC FC              113     db 0fch 
+00AD 60              114     db 60h
+00AE DA              115     db 0dah
+00AF F2              116     db 0f2h
+00B0 66              117     db 066h
+00B1 B6              118      db 0b6h
+00B2 BE              119     db 0beh
+00B3 E0              120     db 0e0h
+00B4 FE              121     db 0feh
+00B5 F6              122     db 0f6h
+                     123     
+                     124     end
+A51 MACRO ASSEMBLER  SSD7                                                                 07/05/2013 04:46:16 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   00A2H   A   
+COUNT. . . . . . .  N NUMB   0040H   A   
+DC1. . . . . . . .  N NUMB   0034H   A   
+DC2. . . . . . . .  N NUMB   0035H   A   
+DC3. . . . . . . .  N NUMB   0036H   A   
+DELAY. . . . . . .  C ADDR   009FH   A   
+DISPLAY. . . . . .  C ADDR   0056H   A   
+DISP_LUT . . . . .  C ADDR   00ACH   A   
+DS1. . . . . . . .  N NUMB   0030H   A   
+DS2. . . . . . . .  N NUMB   0031H   A   
+DS3. . . . . . . .  N NUMB   0032H   A   
+DS4. . . . . . . .  N NUMB   0033H   A   
+HERE . . . . . . .  C ADDR   009FH   A   
+INCR . . . . . . .  C ADDR   0025H   A   
+INCR1. . . . . . .  C ADDR   003DH   A   
+LOOP . . . . . . .  C ADDR   000FH   A   
+LOOP2. . . . . . .  C ADDR   0019H   A   
+MAIN . . . . . . .  C ADDR   000CH   A   
+OUT. . . . . . . .  C ADDR   0055H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+SL1. . . . . . . .  B ADDR   00A0H.0 A   
+SL2. . . . . . . .  B ADDR   00A0H.1 A   
+SL3. . . . . . . .  B ADDR   00A0H.2 A   
+SL4. . . . . . . .  B ADDR   00A0H.3 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

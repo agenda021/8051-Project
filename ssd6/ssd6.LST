@@ -1,0 +1,132 @@
+A51 MACRO ASSEMBLER  SSD6                                                                 07/05/2013 04:38:38 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.01
+OBJECT MODULE PLACED IN ssd6.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ssd6.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+  0030                 1     ds1 equ 30h
+                       2     
+                       3     
+  0034                 4     dc1 equ 34h
+  0035                 5     dc2 equ 35h
+  0036                 6     dc3 equ 36h
+                       7     
+  00A0                 8     sl1 bit p2.0
+                       9     
+  0040                10     count equ 40h
+0000                  11     org 0000h
+                      12     
+0000 758000           13     mov p0,#00h
+                      14     
+0003 753000           15     mov ds1,#00h
+                      16     
+                      17     
+0006 754025           18     main: mov count,#25h
+0009 1134             19     loop:call display
+000B D540FB           20     djnz count ,loop
+000E 111D             21     call incr
+0010 B409F6           22     cjne a,#09h,loop
+0013 1134             23     loop2: call display
+0015 D540FB           24     djnz count ,loop2
+0018 1128             25     call incr1
+001A B400F6           26     cjne a,#00h,loop2
+                      27     
+001D 0530             28     incr:  inc ds1
+001F E530             29     mov a , ds1
+0021 B4090F           30     cjne a,#09h,out
+0024 753009           31     mov ds1,#09h
+0027 22               32     ret
+0028 1530             33     incr1:  dec ds1
+002A E530             34     mov a , ds1
+002C B40004           35     cjne a,#00h,out
+002F 753000           36      mov ds1,#00h
+0032 22               37      ret
+                      38     
+0033 22               39     out: ret
+                      40     
+                      41       
+                      42     
+                      43     
+                      44     
+0034 C2A0             45     display: clr sl1
+                      46     
+                      47     
+0036 90004E           48     mov dptr,#disp_lut
+0039 E530             49     mov a,ds1
+003B 93               50     movc a,@a+dptr
+003C F580             51     mov p0,a
+                      52     
+003E 1141             53     call delay
+                      54     
+                      55     
+                      56     
+0040 22               57     ret
+                      58     
+A51 MACRO ASSEMBLER  SSD6                                                                 07/05/2013 04:38:38 PAGE     2
+
+0041                  59     delay:
+                      60     ; mov dc3,#07d
+0041 753505           61     here:mov dc2,#05h
+0044 7534FF           62     again:mov dc1,#0ffh
+0047 D534FD           63     djnz dc1,$
+004A D535F7           64     djnz dc2,again
+                      65     ;djnz dc3,here
+004D 22               66        ret 
+004E                  67     disp_lut:
+004E FC               68     db 0fch 
+004F 60               69     db 60h
+0050 DA               70     db 0dah
+0051 F2               71     db 0f2h
+0052 66               72     db 066h
+0053 B6               73      db 0b6h
+0054 BE               74     db 0beh
+0055 E0               75     db 0e0h
+0056 FE               76     db 0feh
+0057 F6               77     db 0f6h
+                      78      
+                      79     
+                      80     
+0058 EE               81     db 0eeh
+0059 3E               82     db 03eh
+005A 9C               83     db 9ch
+005B 7A               84     db 7ah
+005C 9E               85     db 9eh
+005D 8F               86     db 8fh
+                      87     
+                      88     end
+A51 MACRO ASSEMBLER  SSD6                                                                 07/05/2013 04:38:38 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0044H   A   
+COUNT. . . . . . .  N NUMB   0040H   A   
+DC1. . . . . . . .  N NUMB   0034H   A   
+DC2. . . . . . . .  N NUMB   0035H   A   
+DC3. . . . . . . .  N NUMB   0036H   A   
+DELAY. . . . . . .  C ADDR   0041H   A   
+DISPLAY. . . . . .  C ADDR   0034H   A   
+DISP_LUT . . . . .  C ADDR   004EH   A   
+DS1. . . . . . . .  N NUMB   0030H   A   
+HERE . . . . . . .  C ADDR   0041H   A   
+INCR . . . . . . .  C ADDR   001DH   A   
+INCR1. . . . . . .  C ADDR   0028H   A   
+LOOP . . . . . . .  C ADDR   0009H   A   
+LOOP2. . . . . . .  C ADDR   0013H   A   
+MAIN . . . . . . .  C ADDR   0006H   A   
+OUT. . . . . . . .  C ADDR   0033H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+SL1. . . . . . . .  B ADDR   00A0H.0 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

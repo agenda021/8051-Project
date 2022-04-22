@@ -1,0 +1,95 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/05/2013  04:38:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE ssd6.obj TO ssd6 RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  ssd6.obj (SSD6)
+
+
+LINK MAP OF MODULE:  ssd6 (SSD6)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     005EH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  ssd6 (SSD6)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SSD6
+  C:0044H         SYMBOL        AGAIN
+  N:0040H         SYMBOL        COUNT
+  N:0034H         SYMBOL        DC1
+  N:0035H         SYMBOL        DC2
+  N:0036H         SYMBOL        DC3
+  C:0041H         SYMBOL        DELAY
+  C:0034H         SYMBOL        DISPLAY
+  C:004EH         SYMBOL        DISP_LUT
+  N:0030H         SYMBOL        DS1
+  C:0041H         SYMBOL        HERE
+  C:001DH         SYMBOL        INCR
+  C:0028H         SYMBOL        INCR1
+  C:0009H         SYMBOL        LOOP
+  C:0013H         SYMBOL        LOOP2
+  C:0006H         SYMBOL        MAIN
+  C:0033H         SYMBOL        OUT
+  D:0080H         SYMBOL        P0
+  D:00A0H         SYMBOL        P2
+  B:00A0H.0       SYMBOL        SL1
+  C:0000H         LINE#         13
+  C:0003H         LINE#         15
+  C:0006H         LINE#         18
+  C:0009H         LINE#         19
+  C:000BH         LINE#         20
+  C:000EH         LINE#         21
+  C:0010H         LINE#         22
+  C:0013H         LINE#         23
+  C:0015H         LINE#         24
+  C:0018H         LINE#         25
+  C:001AH         LINE#         26
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/05/2013  04:38:38  PAGE 2
+
+
+  C:001DH         LINE#         28
+  C:001FH         LINE#         29
+  C:0021H         LINE#         30
+  C:0024H         LINE#         31
+  C:0027H         LINE#         32
+  C:0028H         LINE#         33
+  C:002AH         LINE#         34
+  C:002CH         LINE#         35
+  C:002FH         LINE#         36
+  C:0032H         LINE#         37
+  C:0033H         LINE#         39
+  C:0034H         LINE#         45
+  C:0036H         LINE#         48
+  C:0039H         LINE#         49
+  C:003BH         LINE#         50
+  C:003CH         LINE#         51
+  C:003EH         LINE#         53
+  C:0040H         LINE#         57
+  C:0041H         LINE#         61
+  C:0044H         LINE#         62
+  C:0047H         LINE#         63
+  C:004AH         LINE#         64
+  C:004DH         LINE#         66
+  -------         ENDMOD        SSD6
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005EH BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=94
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
