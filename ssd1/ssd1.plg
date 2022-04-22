@@ -1,0 +1,106 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\k\ssd1\ssd1.uvproj
+Project File Date:  07/05/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling ssd1.asm...
+ssd1.asm(31): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(43): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(55): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(67): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(76): error A9: SYNTAX ERROR
+ssd1.asm(91): error A1: ILLEGAL CHARACTER IN NUMERIC CONSTANT
+ssd1.asm(91): error A34: ',' EXPECTED
+Target not created
+Build target 'Target 1'
+assembling ssd1.asm...
+ssd1.asm(31): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(43): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(55): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(67): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(76): error A9: SYNTAX ERROR
+ssd1.asm(91): error A1: ILLEGAL CHARACTER IN NUMERIC CONSTANT
+ssd1.asm(91): error A34: ',' EXPECTED
+Target not created
+Build target 'Target 1'
+assembling ssd1.asm...
+ssd1.asm(31): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(43): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(55): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(67): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(76): error A9: SYNTAX ERROR
+ssd1.asm(91): error A1: ILLEGAL CHARACTER IN NUMERIC CONSTANT
+ssd1.asm(91): error A34: ',' EXPECTED
+Target not created
+Build target 'Target 1'
+assembling ssd1.asm...
+ssd1.asm(31): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(43): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(55): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(67): error A45: UNDEFINED SYMBOL (PASS-2)
+ssd1.asm(76): error A9: SYNTAX ERROR
+Target not created
+Build target 'Target 1'
+assembling ssd1.asm...
+ssd1.asm(76): error A9: SYNTAX ERROR
+Target not created
+Build target 'Target 1'
+assembling ssd1.asm...
+ssd1.asm(76): error A9: SYNTAX ERROR
+Target not created
+Build target 'Target 1'
+assembling ssd1.asm...
+ssd1.asm(76): error A9: SYNTAX ERROR
+Target not created
+Build target 'Target 1'
+assembling ssd1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=126
+"ssd1" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling ssd1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=126
+creating hex file from "ssd1"...
+"ssd1" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling ssd1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=127
+creating hex file from "ssd1"...
+"ssd1" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling ssd1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=127
+creating hex file from "ssd1"...
+"ssd1" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling ssd1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=121
+creating hex file from "ssd1"...
+"ssd1" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling ssd1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=110
+creating hex file from "ssd1"...
+"ssd1" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling ssd1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=109
+creating hex file from "ssd1"...
+"ssd1" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling ssd1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=121
+creating hex file from "ssd1"...
+"ssd1" - 0 Error(s), 0 Warning(s).
